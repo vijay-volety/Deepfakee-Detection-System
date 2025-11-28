@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Upload Test</title>
+</head>
+<body>
+    <h1>Simple Upload Test</h1>
+    
+    <form id=\"testForm\">
+        <input type=\"file\" id=\"fileInput\" accept=\".jpg,.jpeg,.png,.mp4,.mov,.avi\" required>
+        <br><br>
+        <button type=\"submit\">Test Upload</button>
+    </form>
+    
+    <div id=\"result\"></div>
+    
+    <script>
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert('Please select a file');
+                return;
+            }
+            
+            console.log('Testing upload with file:', file.name, file.size);
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('user_consent', 'true');
+            
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/detect', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                const result = await response.text();
+                console.log('Response body:', result);
+                
+                document.getElementById('result').innerHTML = 
+                    `<h3>Result:</h3><pre>${result}</pre>`;
+                    
+                if (response.ok) {
+                    alert('Upload successful!');
+                } else {
+                    alert('Upload failed: ' + response.status);
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error: ' + error.message);
+                document.getElementById('result').innerHTML = 
+                    `<h3>Error:</h3><pre>${error.message}</pre>`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Training configuration for ResNeXt + LSTM model
+
+model:
+  type: resnext_lstm
+  resnext_type: resnext50_32x4d
+  lstm_hidden_size: 512
+  lstm_num_layers: 2
+  num_classes: 2
+  dropout_rate: 0.5
+  freeze_resnext: false
+
+data:
+  root_dir: /data/deepfake
+  datasets:
+    - DFDC
+    - FaceForensics++
+    - Celeb-DF
+  sequence_length: 16
+  batch_size: 16
+  num_workers: 4
+
+optimizer:
+  type: adam
+  learning_rate: 0.001
+  weight_decay: 1e-4
+
+scheduler:
+  type: cosine
+  T_max: 100
+
+loss:
+  type: cross_entropy
+
+training:
+  num_epochs: 100
+  gradient_clipping: 1.0
+  early_stopping_patience: 15
+  early_stopping_min_delta: 0.001
+
+paths:
+  checkpoint_dir: checkpoints/resnext_lstm
+  log_dir: logs/resnext_lstm
+  results_dir: results/resnext_lstm
+
+wandb:
+  enabled: false
+  project: deepfake-detection

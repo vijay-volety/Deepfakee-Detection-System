@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DeepFake Detection Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1f2937;
+            margin: 10px 0;
+        }
+        .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            border-left: 4px solid #2563eb;
+            background-color: #f8fafc;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .result-card {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .authentic-card {
+            background-color: #dcfce7;
+            border: 2px solid #16a34a;
+        }
+        .deepfake-card {
+            background-color: #fef2f2;
+            border: 2px solid #dc2626;
+        }
+        .percentage {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .authentic {
+            color: #16a34a;
+        }
+        .deepfake {
+            color: #dc2626;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .info-table th, .info-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .info-table th {
+            background-color: #f3f4f6;
+            font-weight: bold;
+        }
+        .warning {
+            background-color: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .recommendation {
+            background-color: #dbeafe;
+            border: 1px solid #3b82f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .confidence-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #f3f4f6;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #16a34a 0%, #f59e0b 50%, #dc2626 100%);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🛡️ DeepFake Detection System</div>
+        <div class="title">Analysis Report</div>
+        <div class="subtitle">Comprehensive AI-Powered Media Authenticity Analysis</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📋 Analysis Summary</div>
+        <table class="info-table">
+            <tr><th>File Name</th><td>Screenshot 2025-09-13 215459.png</td></tr>
+            <tr><th>Analysis Date</th><td>2025-09-13 23:51:26 UTC</td></tr>
+            <tr><th>File Size</th><td>452,585 bytes</td></tr>
+            <tr><th>Job ID</th><td>9057af5c-d5f9-444c-a7b7-8b9831fe8e4e</td></tr>
+            <tr><th>Processing Time</th><td>33.4 seconds</td></tr>
+            <tr><th>Model Version</th><td>ResNet50-LSTM-v2.2.0-Enhanced-Deepfake-Detection</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🎯 Detection Results</div>
+        <div class="result-grid">
+            <div class="result-card authentic-card">
+                <h3>Authentic</h3>
+                <div class="percentage authentic">83.8%</div>
+                <p>Probability that content is genuine</p>
+            </div>
+            <div class="result-card deepfake-card">
+                <h3>DeepFake</h3>
+                <div class="percentage deepfake">16.2%</div>
+                <p>Probability that content is synthetic</p>
+            </div>
+        </div>
+        
+        <div style="margin: 20px 0;">
+            <strong>Overall Confidence:</strong> 83.3%
+            <div class="confidence-bar">
+                <div class="confidence-fill" style="width: 83.3%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">🔍 Technical Analysis</div>
+        <table class="info-table">
+            <tr><th>Image Quality Score</th><td>60.2%</td></tr>
+            <tr><th>Face Detection Confidence</th><td>82.8%</td></tr>
+            <tr><th>Artifacts Detected</th><td>No</td></tr>
+            <tr><th>Suspicious Patterns</th><td>None</td></tr>
+            <tr><th>Total Frames Analyzed</th><td>1</td></tr>
+            <tr><th>Detection Algorithms</th><td>ResNet50, LSTM, Artifact-Detection, Facial-Inconsistency-Analysis</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📊 Frame-by-Frame Analysis</div>
+        <p>Detailed analysis of individual frames/regions:</p>
+        <table class="info-table">
+            <tr><th>Frame</th><th>Timestamp</th><th>DeepFake Score</th><th>Confidence</th><th>Suspicious Regions</th></tr>
+            <tr>
+                <td>1</td>
+                <td>0.0s</td>
+                <td>25.6%</td>
+                <td>83.3%</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="recommendation">
+        <h3>✅ CONTENT APPEARS AUTHENTIC</h3>
+        <p>This analysis indicates a 83.8% probability that the uploaded content is genuine. 
+However:
+• No detection system is 100% accurate
+• Always consider the source and context
+• Be aware that detection technology is constantly evolving
+• Sophisticated deepfakes may still evade detection</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">📚 Methodology & Training Data</div>
+        <p><strong>Training Datasets:</strong> DFDC, FaceForensics++, Celeb-DF, Enhanced-Synthetic-Dataset</p>
+        <p><strong>Model Accuracy:</strong> 96.8%</p>
+        <p><strong>Analysis Method:</strong> This analysis uses a combination of Convolutional Neural Networks (ResNet50) and Long Short-Term Memory networks (LSTM) to detect patterns indicative of synthetic content generation.</p>
+        
+        <h4>Detection Capabilities:</h4>
+        <ul>
+            <li>Facial artifact detection and inconsistency analysis</li>
+            <li>Temporal coherence verification in video content</li>
+            <li>Lighting and shadow consistency evaluation</li>
+            <li>Skin texture and facial feature analysis</li>
+            <li>Boundary detection around manipulated regions</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">⚖️ Legal & Ethical Disclaimer</div>
+        <p><strong>Important:</strong> This report is generated by an AI system for informational and research purposes only.</p>
+        <ul>
+            <li>Results should not be used as sole evidence in legal proceedings</li>
+            <li>The technology may produce false positives or false negatives</li>
+            <li>Always verify results through multiple sources and methods</li>
+            <li>Consider the ethical implications of deepfake detection and content verification</li>
+            <li>Respect privacy and consent when analyzing media content</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Generated by DeepFake Detection System vResNet50-LSTM-v2.2.0-Enhanced-Deepfake-Detection</p>
+        <p>Report ID: 9057af5c-d5f9-444c-a7b7-8b9831fe8e4e | Generated: 2025-09-13 23:51:46 UTC</p>
+        <p>For questions or concerns, please contact your system administrator.</p>
+    </div>
+</body>
+</html>
+    
